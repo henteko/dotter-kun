@@ -1,0 +1,76 @@
+body {
+  height: 100vh;
+  margin: 0px;
+
+  display: grid;
+  grid-template-columns: 200px;
+  grid-template-rows: 50px;
+  grid-template-areas: "header header"
+                       "palette editor";
+}
+
+@media screen and (max-width: 730px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 2fr 1fr;
+    grid-template-areas: "header"
+                         "editor"
+                         "palette";
+  }
+}
+
+.header {
+  grid-area: header;
+
+  background-color: #404040;
+  border-bottom: 1px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > .logo {
+  color: white;
+  font-size: x-large;
+}
+
+.editor {
+  grid-area: editor;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #404040;
+}
+
+#dot-area {
+  display: grid;
+  grid-template-columns: repeat(25, 20px);
+  grid-template-rows: repeat(25, 20px);
+
+  width: 500px;
+  height: 500px;
+
+  border: 1px solid white;
+}
+
+#dot-area > .dot {
+  background-color: white;
+  border: 0.1px solid lightgray;
+}
+
+.palette {
+  grid-area: palette;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 20px);
+  grid-template-rows: repeat(auto-fill, 20px);
+
+  background-color: #707070;
+}
+
+.palette > .palette-value {
+  border: 0.1px solid lightgray;
+  cursor: pointer;
+}
