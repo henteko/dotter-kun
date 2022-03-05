@@ -3,20 +3,22 @@ body {
   margin: 0px;
 
   display: grid;
-  grid-template-columns: 200px;
-  grid-template-rows: 50px;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 50px 1fr 30px;
   grid-template-areas: "header header"
-                       "palette editor";
+                       "palette editor"
+                       "footer footer";
   gap: 1px;
 }
 
 @media screen and (max-width: 730px) {
   body {
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 2fr 1fr;
+    grid-template-rows: 50px 2fr 1fr 30px;
     grid-template-areas: "header"
                          "editor"
-                         "palette";
+                         "palette"
+                         "footer";
   }
 }
 
@@ -87,4 +89,22 @@ body {
 .palette-area > .palette-value {
   border: 0.1px solid lightgray;
   cursor: pointer;
+}
+
+.footer {
+  grid-area: footer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #707070;
+}
+
+.footer > span {
+  color: white;
+}
+
+.footer > span > a {
+  color: white;
 }
