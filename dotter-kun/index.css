@@ -7,6 +7,7 @@ body {
   grid-template-rows: 50px;
   grid-template-areas: "header header"
                        "palette editor";
+  gap: 1px;
 }
 
 @media screen and (max-width: 730px) {
@@ -22,8 +23,7 @@ body {
 .header {
   grid-area: header;
 
-  background-color: #404040;
-  border-bottom: 1px solid white;
+  background-color: #707070;
 
   display: flex;
   justify-content: center;
@@ -33,6 +33,7 @@ body {
 .header > .logo {
   color: white;
   font-size: x-large;
+  font-weight: bold;
 }
 
 .editor {
@@ -64,13 +65,26 @@ body {
   grid-area: palette;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, 20px);
-  grid-template-rows: repeat(auto-fill, 20px);
+  grid-template-rows: 50px 1fr;
 
   background-color: #707070;
 }
 
-.palette > .palette-value {
+.palette > .palette-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.palette > .palette-area {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 20px);
+  grid-template-rows: repeat(auto-fill, 20px);
+}
+
+.palette-area > .palette-value {
   border: 0.1px solid lightgray;
   cursor: pointer;
 }

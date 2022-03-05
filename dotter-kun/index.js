@@ -24,7 +24,7 @@ function setUpPalette() {
   }
 
   function select() {
-    selectedPalette.style.border = "initial";
+    selectedPalette.style.border = "0.1px solid lightgray";
 
     selectedPalette = this;
     this.style.border = "3px solid black";
@@ -44,7 +44,7 @@ function setUpPalette() {
     div.className = "palette-value";
     div.addEventListener("click", select);
     div.style.backgroundColor = element;
-    document.querySelector(".palette").append(div);
+    document.querySelector(".palette-area").append(div);
 
     if (index === 0) { selectedPalette = div; }
   });
